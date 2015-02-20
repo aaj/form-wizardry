@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+
+	<body>
+		<h1>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</h1>
+		<h3>Add new contact</h3>
+		<p>Fill out your contact details</p>
+
+		<form action="" method="POST">
+			{% csrf_token %}
+			{{ wizard.management_form }}
+
+			{{ wizard.form.as_p }}
+
+			<input type="submit" value="Next"/>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<h2>New contact saved successfully!<h2>
+
+		<h3>Contact Lists</h3>
+		<ul>
+			{% for cl in contact_lists %}
+				<li>{{ cl }}
+					<ul>
+						{% for c in cl.contact_set.all %}
+							{% if c.id == new_contact_id %}
+								<li style="color:red;">(new) {{ c }}</li>
+							{% else %}
+								<li>{{ c }}</li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+				</li>
+			{% endfor %}
+		</ul>
+	</body>
+</html>

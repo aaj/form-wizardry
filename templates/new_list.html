@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+
+	<body>
+		<h1>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</h1>
+		<h3>Create a new list</h3>
+
+		<form action="" method="POST">
+			{% csrf_token %}
+			{{ wizard.management_form }}
+
+			{{ wizard.form.as_p }}
+
+			<input type="submit" value="Next"/>
+			<br/>
+			{% if wizard.steps.prev %}
+				<button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">Prev Step</button>
+			{% endif %}
+		</form>
+	</body>
+</html>
