@@ -1,6 +1,6 @@
 # form-wizardry
 
-So, this was my little esperiment with Django Form Wizard. I'll try to go over the basics of what I did.
+So, this was my little experiment with Django Form Wizard. I'll try to go over the basics of what I did.
 
 # Models
 
